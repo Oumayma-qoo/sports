@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/SplashFragment"
+        tools:layout="@layout/fragment_splash"
+        android:name="com.example.events_live.presentation.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.events_live.presentation.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_eventFragment"
+            app:destination="@id/EventFragment"
+            app:popUpTo="@id/HomeFragment"
+            app:popUpToSaveState="true"
+
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_languageFragment"
+            app:destination="@id/LanguageFragment"
+            />
+
+<!--        <action-->
+<!--            android:id="@+id/action_homeFragment_to_webViewFragment"-->
+<!--            app:destination="@id/WebViewFragment" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/LanguageFragment"
+        tools:layout="@layout/fragment_language"
+        android:name="com.example.events_live.presentation.settings.LanguageFragment"
+        android:label="LanguageFragment" >
+    </fragment>
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/WebViewFragment"-->
+<!--        tools:layout="@layout/activity_web_view"-->
+<!--        android:name="com.example.events_live.presentation.webView.WebViewFragment"-->
+<!--        android:label="WebViewFragment" >-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/EventFragment"
+        tools:layout="@layout/fragment_event"
+        android:name="com.example.events_live.presentation.event.EventFragment"
+        android:label="EventFragment" >
+        <action
+            android:id="@+id/action_eventFragment_to_languageFragment"
+            app:destination="@id/LanguageFragment" />
+
+        <action
+            android:id="@+id/action_eventFragment_to_homeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+</navigation>

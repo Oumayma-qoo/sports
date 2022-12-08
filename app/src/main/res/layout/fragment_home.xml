@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.home.HomeFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+   >
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationlayout"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_100sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/app_bar_drawer_test1"
+                layout="@layout/fragment_settings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wholeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/view_top_bar"
+                app:myImg="@{@drawable/ic_menu}"
+                />
+<!--            app:mySrc="@{@drawable/logo_app}"-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageSlider">
+
+                <RelativeLayout
+                    android:id="@+id/rl_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/second_color"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_37sdp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+                        <!--                <RelativeLayout-->
+                        <!--                    android:id="@+id/cancel_button_rl"-->
+                        <!--                    android:layout_width="0dp"-->
+                        <!--                    android:layout_height="match_parent"-->
+                        <!--                    android:layout_weight="15">-->
+
+                        <!--                    <ImageView-->
+                        <!--                        android:id="@+id/cancel_button"-->
+                        <!--                        android:layout_width="14dp"-->
+                        <!--                        android:layout_height="14dp"-->
+                        <!--                        android:layout_centerVertical="true"-->
+                        <!--                        android:layout_marginStart="10dp"-->
+                        <!--                        android:background="@drawable/ic_cancel"-->
+                        <!--                        android:contentDescription="@string/this_is_an_image"-->
+                        <!--                        android:visibility="gone" />-->
+
+
+                        <!--                </RelativeLayout>-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="90">
+
+                            <EditText
+                                android:id="@+id/search_edt"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@null"
+                                android:fontFamily="@font/oswald_regular"
+                                android:hint="@string/search"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/white"
+                                android:textCursorDrawable="@drawable/c"
+                                android:textSize="@dimen/_12sdp"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:contentDescription="@string/this_is_an_image"
+                                    android:src="@drawable/search_ic" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/ivWebHOme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_web"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_cover"
+                android:visibility="gone"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="12"
+                app:iss_delay="0"
+                app:iss_period="1000"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
+                app:layout_constraintDimensionRatio="24:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_matchs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint_search"
+                tools:listitem="@layout/item_home"
+
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

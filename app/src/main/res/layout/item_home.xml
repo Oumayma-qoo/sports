@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="matchItem"
+            type="com.example.events_live.domain.models.Match" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="clickListener"
+            type="com.example.events_live.presentation.home.HomeAdapter.OnItemTap" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:onClick="@{() -> clickListener.onTap(position)}"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+
+        <TextView
+            android:id="@+id/tv_league_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/kanit_regular"
+            android:gravity="center"
+            android:text="@{matchItem.leagueName}"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bundesliga" />
+
+        <TextView
+            android:id="@+id/tv_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_rounded_pink"
+            android:fontFamily="@font/kanit_regular"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/animation_"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/tv_league_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rvTop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_animation">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_home_team"
+                android:layout_width="@dimen/_16sdp"
+                imageUrl="@{matchItem.homeLogo}"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_home_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@{matchItem.homeName}"
+                android:fontFamily="@font/oswald_regular"
+                android:textColor="@color/grey_light"
+                android:textSize="@dimen/_10sdp"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_home_team"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/timing_constraint"
+                tools:text="Man jkfkhgkfgkfjg yhygygggkfjgkfoykygfjgfdftd" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_away_team"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                imageAwayUrl="@{matchItem.awayLogo}"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_away_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald_regular"
+                android:textColor="@color/grey_light"
+                android:text="@{matchItem.awayName}"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/img_away_team"
+                app:layout_constraintTop_toTopOf="parent"
+                android:maxLines="1"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Guidelin2"
+                tools:text="Man fgohfUtd hfhfthfthtf" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".35" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Guidelin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".65" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/timing_constraint"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/Guidelin2"
+                app:layout_constraintStart_toStartOf="@+id/Guideline1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/box"
+                >
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                   app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    >
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/tv_home_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/oswald_regular"
+                            android:textColor="@color/grey_light"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="3" />
+
+                        <TextView
+                            android:id="@+id/tv_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center"
+                            android:text=":"
+                            android:textColor="@color/grey_light"
+                            android:textSize="@dimen/_13sdp"
+                            android:layout_marginHorizontal="@dimen/_2sdp"
+                            />
+                        <TextView
+                            android:id="@+id/tv_away_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/oswald_regular"
+                            android:textColor="@color/grey_light"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="1" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="43 : 58"
+
+                            />
+
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <View-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/green_light"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/rvTop"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

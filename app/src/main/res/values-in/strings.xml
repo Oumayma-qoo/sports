@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="settings">Pengaturan</string>
+    <string name="techniq">Teknik</string>
+    <string name="no_events">Tidak ada acara</string>
+    <string name="no_animation">Tanpa Animasi</string>
+    <string name="search">Cari di sini</string>
+    <string name="animation">ANIMASI</string>
+    <string name="event">ACARA</string>
+    <string name="details">Detail</string>
+    <string name="language">Bahasa</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="share_app">Bagikan Aplikasi</string>
+    <string name="feedback">Umpan Balik</string>
+    <string name="rate_us">Nilai Kami</string>
+    <string name="subs">Substitusi</string>
+    <string name="goals_and_assists">Gol dan assist</string>
+
+    <string name="exit_app">Keluar dari Aplikasi</string>
+    <string name="yes_confirm">Ya, Konfirmasi</string>
+    <string name="no_cancel">Tidak, Batal</string>
+    <string name="english">Bahasa Inggris</string>
+    <string name="chinese">China</string>
+    <string name="vietnamese">Vietnam</string>
+    <string name="indonesian">Bahasa Indonesia</string>
+    <string name="privacy_policy_link"></string>
+
+    <string name="goal">Tujuan</string>
+    <string name="red_card">Kartu Merah</string>
+    <string name="yellow_card">Kartu Kuning</string>
+    <string name="penalty_kick">Tendangan Penalti</string>
+    <string name="own_goal">Tujuan Sendiri</string>
+    <string name="two_y_to_red">Dua Kuning ke Merah</string>
+    <string name="missed_pen">Hukuman yang Tidak Terjawab</string>
+    <string name="raw">Acara Lainnya</string>
+    <string name="tee_off_first">Tee off Pertama</string>
+    <string name="first_corner_kic">Tendangan Sudut Pertama</string>
+    <string name="first_yellow">Kartu Kuning Pertama</string>
+    <string name="number_of_shots">Jumlah Tembakan</string>
+    <string name="shots_on_tarhet">Jumlah Tembakan pada target</string>
+    <string name="number_of_fouls">Jumlah Pelanggaran</string>
+    <string name="number_of_corners">Jumlah Sudut</string>
+    <string name="number_of_corners_ot">Jumlah Corners (Lembur)</string>
+    <string name="free_kicks">Tendangan Bebas</string>
+    <string name="number_of_offsides">Jumlah Offside</string>
+    <string name="own_goals">Tujuan Sendiri</string>
+    <string name="yello_cards">Kartu Kuning</string>
+    <string name="yellow_cards_ot">Kartu Kuning (Lembur)</string>
+    <string name="red_cards">Kartu Merah</string>
+    <string name="ball_control">Kontrol Bola</string>
+    <string name="header">Tajuk</string>
+    <string name="save_the_ball">Simpan Bola</string>
+    <string name="goalkeeper_strikes">Serangan Kiper</string>
+    <string name="lose_the_ball">Kehilangan Bolanya</string>
+    <string name="successful_steal">Sukses Mencuri</string>
+    <string name="block">Blokir</string>
+    <string name="long_pass">Long Pass</string>
+    <string name="short_pass">Lulus Pendek</string>
+    <string name="assist">Membantu</string>
+    <string name="successful_pass">Lulus Berhasil</string>
+    <string name="first_sub">Pergantian Pertama</string>
+    <string name="last_sub">Pergantian Terakhir</string>
+    <string name="first_off">Offside Pertama</string>
+    <string name="last_off">Offside Terakhir</string>
+    <string name="change_num_players">Ubah jumlah pemain</string>
+    <string name="last_corner_kick">Tendangan Sudut Terakhir</string>
+    <string name="last_yello">Kartu Kuning Terakhir</string>
+    <string name="change_num_players_ot">Ubah Jumlah pemain (Lembur)</string>
+    <string name="num_off_ot">Jumlah Offside (Lembur)</string>
+    <string name="miss_goal">Sasaran Hilang</string>
+    <string name="middle_column">Kolom Tengah</string>
+    <string name="headers">Jumlah header yang Berhasil</string>
+    <string name="blocked_shots">Tembakan yang Diblokir</string>
+    <string name="exceeding_times">Melebihi Waktu</string>
+    <string name="out_of_bounds">Di Luar Batas</string>
+    <string name="number_of_passes">Jumlah Pass</string>
+    <string name="pass_success_rate">Tingkat Keberhasilan Lulus</string>
+    <string name="number_of_attacks">Jumlah Serangan</string>
+    <string name="dangerous_attacks">Jumlah Serangan Berbahaya</string>
+    <string name="half_time_corners">Tendangan Sudut Paruh Waktu</string>
+    <string name="posession">Kepemilikan Setengah Lapangan</string>
+</resources>

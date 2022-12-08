@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.home.HomeFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_green_gradient"
+
+        >
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        >
+
+        <include
+            android:id="@+id/app_bar_drawer"
+            layout="@layout/fragment_settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_green_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_top_bar"
+            app:myImg="@{@drawable/ic_menu}"
+            app:mySrc="@{@drawable/ic_back}"
+            app:title="@{@string/details}" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutEvent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:elevation="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIconTint="@color/white"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorFullWidth="true"
+                app:tabIndicatorHeight="@dimen/_2sdp"
+                app:tabSelectedTextColor="@color/green_light"
+                app:tabTextColor="@color/white"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/teamlayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/soccerlink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayoutEvent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_league_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/kanit_regular"
+                    android:gravity="center"
+                    android:textColor="@color/green_light"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Bundesliga" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rvTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_league_name">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_home_team"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:src="@drawable/ic_launcher_background"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_home_team"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:fontFamily="@font/oswald_regular"
+                        android:maxLines="1"
+                        android:textColor="@color/grey_light"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/Guideline1"
+                        app:layout_constraintStart_toEndOf="@+id/img_home_team"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Man jkfkhgkfgkfjgkfjgkfoykygfjgfdftd" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_away_team"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/ic_launcher_background"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_away_team"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/oswald_regular"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:textColor="@color/grey_light"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_away_team"
+                        app:layout_constraintStart_toEndOf="@+id/Guidelin2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Man fgohfUtd hfhfthfthtf" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/Guideline1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".4" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/Guidelin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".6" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/timing_constraint"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        app:layout_constraintEnd_toStartOf="@id/Guidelin2"
+                        app:layout_constraintStart_toEndOf="@+id/Guideline1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/box"
+                        >
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/_5sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            >
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:id="@+id/tv_home_score"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/oswald_regular"
+                                    android:textColor="@color/grey_light"
+                                    android:textSize="@dimen/_13sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/view"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="3" />
+
+                                <TextView
+                                    android:id="@+id/tv_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_2sdp"
+                                    android:fontFamily="@font/oswald_regular"
+                                    android:gravity="center"
+                                    android:text=":"
+                                    android:textColor="@color/grey_light"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <TextView
+                                    android:id="@+id/tv_away_score"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/oswald_regular"
+                                    android:textColor="@color/grey_light"
+                                    android:textSize="@dimen/_13sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/view"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="1" />
+
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/oswald_regular"
+                                    android:gravity="center"
+                                    android:text="43 : 58"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10sdp"
+
+                                    />
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </LinearLayout>
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <include
+
+                android:id="@+id/webview"
+                layout="@layout/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/teamlayout"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/noAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:text="@string/no_animation"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/teamlayout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_event"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/kanit_regular"
+                android:gravity="start"
+                android:text="@string/event_"
+                android:textAllCaps="false"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/teamlayout"
+
+
+                />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_event"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/item_event"
+                        android:layout_width="match_parent"
+                        app:stackFromEnd="true"
+                        app:reverseLayout="true"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_technic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/kanit_regular"
+                        android:gravity="start"
+                        android:text="@string/techniq"
+                        android:textAllCaps="false"
+                        android:textColor="@color/green_light"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/item_event"
+                        android:visibility="gone"
+                        />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/item_trchniq"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_technic"
+                        tools:listitem="@layout/item_techniq"
+                        android:visibility="gone"
+                        />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_no_technic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/no_technic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_technic"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        android:visibility="gone"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

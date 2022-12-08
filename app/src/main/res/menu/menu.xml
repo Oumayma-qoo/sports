@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/firstItem"
+        android:title="@string/language"
+        android:icon="@drawable/ic_language"
+
+       />
+    <item
+        android:id="@+id/secondtItem"
+        android:title="@string/privacy_policy"
+        android:icon="@drawable/ic_privacy"
+        />
+    <item
+        android:id="@+id/thirdItem"
+        android:title="@string/share_app"
+        android:icon="@drawable/share"/>
+    <item
+        android:id="@+id/fourthItem"
+        android:title="@string/feedback"
+        android:icon="@drawable/edit"/>
+    <item
+        android:id="@+id/fifethItem"
+        android:title="@string/rate_us"
+        android:icon="@drawable/start"/>
+
+</menu>
